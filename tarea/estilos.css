@@ -1,0 +1,174 @@
+
+/* =====================================
+   MI CONTROL FINANCIERO
+   DISEÑO MODERNO
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 18px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1 {
+    color: #ffffff;
+    background: #142b4a;
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+h2 {
+    color: #142b4a;
+    margin-bottom: 18px;
+}
+
+h3 {
+    color: #334155;
+}
+
+body > footer,
+footer {
+    max-width: 1100px;
+    margin: 25px auto;
+    text-align: center;
+    color: #64748b;
+}
+
+/* Secciones principales */
+
+section {
+    background: #ffffff;
+    padding: 24px;
+    margin: 20px 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+/* Campos y formularios */
+
+input,
+select {
+    padding: 11px;
+    margin: 5px 4px 5px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    max-width: 100%;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #60a5fa;
+    border-color: #2563eb;
+}
+
+/* Botones */
+
+button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 4px;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+/* Listas */
+
+ul {
+    padding-left: 22px;
+}
+
+li {
+    margin: 12px 0;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+/* Botones de edición y eliminación */
+
+li button {
+    padding: 7px 11px;
+    font-size: 12px;
+}
+
+li button:last-child {
+    background: #dc2626;
+}
+
+li button:last-child:hover {
+    background: #991b1b;
+}
+
+/* Resumen financiero */
+
+#resumen p {
+    padding: 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Importes */
+
+#ingresosDia,
+#ingresosMes {
+    color: #15803d;
+}
+
+#gastosDia,
+#gastosMes {
+    color: #dc2626;
+}
+
+#saldoDia,
+#saldoMes {
+    color: #1d4ed8;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 20px;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    button {
+        margin: 5px 2px;
+    }
+}

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Control Financiero</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mi Control Financiero</h1>
+        <p>Organiza tus ingresos, gastos y ahorros.</p>
+    </header>
+
+    <main>
+        <section id="seccionAcceso">
+            <h2>Acceso a tu cuenta</h2>
+            <p>Ingresa para consultar y guardar tus movimientos financieros.</p>
+
+            <form id="formAcceso">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" required>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" required>
+
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" id="btnRegistro">Crear cuenta</button>
+            </form>
+
+            <p id="mensajeAcceso"></p>
+        </section>
+
+        <div id="appContenido" hidden>
+
+            <p id="usuarioActual"></p>
+            <button type="button" id="btnCerrarSesion">
+                Cerrar sesión
+            </button>
+
+            <!-- PANEL EXCLUSIVO DEL ADMINISTRADOR -->
+            <section id="panelAdministrador" hidden>
+                <h2>Panel de administración</h2>
+
+                <div>
+                    <h3>Usuarios registrados</h3>
+                    <p>
+                        Total de usuarios:
+                        <strong id="totalUsuarios">0</strong>
+                    </p>
+                </div>
+
+                <h3>Lista de usuarios</h3>
+                <ul id="listaUsuarios"></ul>
+
+                <p id="mensajeAdministrador"></p>
+            </section>
+
+            <section id="fuentes">
+                <h2>Mis fuentes de ingreso</h2>
+
+                <form id="formFuente">
+                    <input type="text" id="nombreFuente"
+                        placeholder="Ejemplo: Mi negocio" required>
+                    <button type="submit">Agregar fuente</button>
+                </form>
+
+                <ul id="listaFuentes"></ul>
+            </section>
+
+            <section id="movimientos">
+                <h2>Registrar movimiento</h2>
+
+                <form id="formMovimiento">
+                    <label for="tipo">Tipo de movimiento:</label>
+                    <select id="tipo" required>
+                        <option value="ingreso">Ingreso</option>
+                        <option value="gasto">Gasto</option>
+                    </select>
+
+                    <label for="fuenteMovimiento">Fuente de ingreso:</label>
+                    <select id="fuenteMovimiento">
+                        <option value="">Selecciona una fuente</option>
+                    </select>
+
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion"
+                        placeholder="Descripción del movimiento" required>
+
+                    <label for="monto">Monto (S/):</label>
+                    <input type="number" id="monto" min="0.01"
+                        step="0.01" placeholder="0.00" required>
+
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" required>
+
+                    <button type="submit">Guardar movimiento</button>
+                </form>
+            </section>
+
+            <section id="resumen">
+                <h2>Mi resumen financiero</h2>
+
+                <div>
+                    <h3>Resumen diario</h3>
+                    <p>Ingresos: <span id="ingresosDia">S/ 0.00</span></p>
+                    <p>Gastos: <span id="gastosDia">S/ 0.00</span></p>
+                    <p>Saldo: <span id="saldoDia">S/ 0.00</span></p>
+                </div>
+
+                <div>
+                    <h3>Resumen mensual</h3>
+                    <p>Ingresos: <span id="ingresosMes">S/ 0.00</span></p>
+                    <p>Gastos: <span id="gastosMes">S/ 0.00</span></p>
+                    <p>Saldo: <span id="saldoMes">S/ 0.00</span></p>
+                </div>
+            </section>
+
+            <section id="historial">
+                <h2>Historial de movimientos</h2>
+                <ul id="listaMovimientos"></ul>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Mi Control Financiero - Proyecto TECSUP</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
